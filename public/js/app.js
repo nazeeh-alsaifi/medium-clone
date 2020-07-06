@@ -37227,6 +37227,30 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+$('#recipeCarousel').carousel({
+  interval: 10000
+});
+$('.carousel .carousel-item').each(function () {
+  var minPerSlide = 20;
+  var next = $(this).next();
+
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+
+  next.children(':first-child').clone().appendTo($(this));
+
+  for (var i = 0; i < minPerSlide; i++) {
+    next = next.next();
+
+    if (!next.length) {
+      next = $(this).siblings(':first');
+    }
+
+    next.children(':first-child').clone().appendTo($(this));
+  }
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

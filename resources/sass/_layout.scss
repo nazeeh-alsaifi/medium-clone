@@ -1,0 +1,19 @@
+.btn-circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.fa {
+    &-search {
+    color: $layout-symbols-color;
+    }
+
+    &-bell-o {
+        color: $layout-symbols-color;
+    }
+
+    &-bookmark {
+        color: $layout-symbols-color;
+    }
+}

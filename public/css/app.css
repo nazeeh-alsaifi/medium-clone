@@ -10928,3 +10928,21 @@ a.text-dark:focus {
   }
 }
 
+.btn-circle {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.fa-search {
+  color: black;
+}
+
+.fa-bell-o {
+  color: black;
+}
+
+.fa-bookmark {
+  color: black;
+}
+

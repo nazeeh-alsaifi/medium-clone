@@ -21939,6 +21939,11 @@ div.scrollmenu a:hover {
   padding: 0;
 }
 
+#content {
+  width: 800px;
+  height: 500px;
+}
+
 hr.solid {
   border-top: 1px solid #adadad;
 }

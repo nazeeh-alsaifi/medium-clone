@@ -72,7 +72,7 @@
                                         aria-expanded="false"></button>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="#">Become a member</a>
-                                    <a class="dropdown-item" href="#">New story</a>
+                                    <a class="dropdown-item" href="{{route('article.create')}}">New story</a>
                                     <a class="dropdown-item" href="#">Stories</a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"

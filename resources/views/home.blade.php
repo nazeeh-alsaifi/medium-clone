@@ -150,6 +150,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="container py-2">
                 <div class="col-lg-10 mx-auto">
                     <div class="mb-4">
@@ -158,15 +159,38 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12 py-4">
+            <div class="col-lg-10 ">
                 @for ($i = 1; $i < 10; $i++)
-                    <div class="card">
+                    <div class="card mt-lg-5">
                         <div class="row no-gutters">
                             <div class="col">
-                                <div class="card-block px-2">
-                                    <h4 class="card-title">Title {{$i}}</h4>
-                                    <p class="card-text">Description</p>
-                                    <a href="#" class="btn btn-primary">BUTTON</a>
+                                <div class="px-2">
+                                    <div class="card-subheading">
+                                        Based on your interests
+                                    </div>
+                                    <div class="heading">
+                                        StackBlitz 2 — Online VS Code IDE for Angular &amp; React
+                                    </div>
+                                    <div class="article-info">
+                                        <div class="article-info-left">
+                                            <div class="">
+                                                <a class="profile-avatar">
+                                                    <img src="https://cdn-images-1.medium.com/fit/c/40/40/1*tl0Vk1GWLRkaRwsBXKTnFg.jpeg" class="avatar-image" alt="Go to the profile of Jeff Goins">
+                                                </a>
+                                            </div>
+                                            <div class="article-info-center">
+                                                <div class="username">Eric Simons</div>
+                                                <div><span class="date">Aug 3 ·  </span><span class="read-time"> 4 min read</span></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="article-info-right">
+                                            <i class="fa fa-bookmark-o bookmark-link fa-2x" aria-hidden="true"></i>
+                                            <i class="fa fa-ellipsis-h more-options-link fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+{{--                                    <p class="card-text">Description</p>--}}
+{{--                                    <a href="#" class="btn btn-primary">BUTTON</a>--}}
                                 </div>
                             </div>
                             <div class="col-auto">

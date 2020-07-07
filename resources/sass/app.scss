@@ -34,3 +34,69 @@ hr.solid {
 }
 
 
+.heading {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2 !important;
+    max-height: 2.4em !important;
+    min-height: 70px;
+}
+.card-subheading {
+    color: rgba(0,0,0,.44);
+    font-size: 18px!important;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+.article-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-basis: auto;
+}
+
+.article-info-left {
+    display: flex;
+}
+
+.profile-avatar {
+    display: block;
+    padding-right: 10px;
+}
+
+.avatar-image {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 100%;
+}
+
+.username {
+    color: rgba(0,0,0,.8);
+    font-size: 12px;
+}
+
+.date, .read-time {
+    color: rgba(0,0,0,.44)!important;
+    font-size: 12px;
+}
+
+.bookmark-link {
+    display: inline-block;
+    font-size: 19px;
+    height: 24px;
+    vertical-align: sub;
+}
+
+.more-options-link {
+    color: rgba(0,0,0,.44);
+    display: inline-block;
+    font-size: 19px;
+    height: 24px;
+    margin-left: 6px;
+    vertical-align: middle;
+    &:hover{
+        color: black;
+
+    }
+}

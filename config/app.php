@@ -167,7 +167,7 @@ return [
          */
         Intervention\Image\ImageServiceProvider::class,
         UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
-
+        Spatie\Permission\PermissionServiceProvider::class,
 
         /*
          * Application Service Providers...

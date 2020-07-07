@@ -25,9 +25,6 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin/dashboard', function(){
-    return 'Wellcome Admin!';
-})->name('admin.dashboard');
 
 //-----------articles routes -----------
 Route::post('/article', 'ArticleController@store')->name('article.store');

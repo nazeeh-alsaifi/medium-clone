@@ -50,7 +50,7 @@
                                        class="col-md-2 col-form-label text-md-right">{{ __('Content') }}</label>
 
                                 <div class="pl-3">
-                                    <textarea id="content"  class="form-control @error('content') is-invalid @enderror" name="content" >{{old('content')}}</textarea>
+                                    <textarea id="content"  class="form-control my-editor @error('content') is-invalid @enderror" name="content" >{{old('content')}}</textarea>
 
                                     @error('content')
                                     <span class="invalid-feedback" role="alert">

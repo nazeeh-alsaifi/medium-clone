@@ -6,62 +6,29 @@
             <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
                 <div class="carousel-inner w-100" role="listbox">
                     <div class="carousel-item active">
-                        <div class="col-md-2">
-                            <div class="card card-body border-0">
-                                <p class="font-weight-bolder">test</p>
+                        <div class="col-md-2 ">
+                            <div class="carousel-card pt-4">
+                                <a href="https://laravel.com/docs">Docs</a>
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="col-md-2">
-                            <div class="card card-body border-0">
-                                <p>test</p>
+                    @for($i=0; $i<=8 ; $i++)
+                        <div class="carousel-item ">
+                            <div class="col-md-2 ">
+                                <div class="carousel-card pt-4">
+                                    <a href="https://laravel.com/docs">Docs</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endfor
+                    <div class="carousel-item ">
+                        <div class="col-md-2 ">
+                            <div class="carousel-card pt-4">
+                                <a href="https://laravel.com/docs">Docs</a>
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="col-md-2">
-                            <div class="card card-body border-0">
-                                <p>test</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-2">
-                            <div class="card card-body border-0">
-                                <p>test</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-2">
-                            <div class="card card-body border-0">
-                                <p>test</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-2">
-                            <div class="card card-body border-0">
-                                <p>test</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-2">
-                            <div class="card card-body border-0">
-                                <p>test</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="col-md-2">
-                            <div class="card card-body border-0">
-                                <p>test</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle"
                           aria-hidden="true"></span>

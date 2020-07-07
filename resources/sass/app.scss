@@ -18,12 +18,30 @@
 @import '~bootstrap/scss/bootstrap';
 @import "layout";
 @import "navbar";
+@import "admin";
 
 * {
     margin: 0;
     padding: 0;
 }
+a.btn {
+    color: white;
+}
 
+a:hover.btn {
+    color: #908fa7;
+    text-decoration: none;
+}
+
+.carousel-card > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
 
 #content{
     width: 800px;

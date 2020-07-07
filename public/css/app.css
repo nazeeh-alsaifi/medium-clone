@@ -21928,12 +21928,12 @@ div.scrollmenu a:hover {
 @media (min-width: 768px) {
   .carousel-inner .carousel-item-right.active,
   .carousel-inner .carousel-item-next {
-    transform: translateX(16%);
+    transform: translateX(17%);
   }
 
   .carousel-inner .carousel-item-left.active,
   .carousel-inner .carousel-item-prev {
-    transform: translateX(-16%);
+    transform: translateX(-17%);
   }
 }
 
@@ -21942,9 +21942,44 @@ div.scrollmenu a:hover {
   transform: translateX(0);
 }
 
+tr.hide-table-padding td {
+  padding: 0;
+}
+
+.expand-button {
+  position: relative;
+}
+
+.accordion-toggle .expand-button:after {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  content: "-";
+}
+
 * {
   margin: 0;
   padding: 0;
+}
+
+a.btn {
+  color: white;
+}
+
+a:hover.btn {
+  color: #908fa7;
+  text-decoration: none;
+}
+
+.carousel-card > a {
+  color: #636b6f;
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 #content {

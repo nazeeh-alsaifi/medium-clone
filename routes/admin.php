@@ -1,5 +1,5 @@
 <?php
 
 Route::get('/admin/dashboard', function(){
-    return 'Welcome Admin!';
+    return view('admin');
 })->name('admin.dashboard');

@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header font-weight-bolder d-flex">
                         <span class="card_header_text pt-2">Articles</span>
-                        <a class="btn btn-dark ml-auto" role="button">add</a>
+                        <a href="{{route('article.create')}}" class="btn btn-dark ml-auto" role="button">add</a>
                     </div>
 
                     <div class="row">

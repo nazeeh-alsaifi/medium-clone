@@ -9,4 +9,7 @@ class ArticleController extends Controller
     public function create(){
         return view('article.create');
     }
+    public function store(){
+        dd(request()->all());
+    }
 }

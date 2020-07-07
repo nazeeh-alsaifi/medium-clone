@@ -26,6 +26,3 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-//-----------articles routes -----------
-Route::post('/article', 'ArticleController@store')->name('article.store');
-Route::get('/article/create', 'ArticleController@create')->name('article.create');

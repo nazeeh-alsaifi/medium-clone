@@ -24,12 +24,14 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr data-toggle="collapse" href="#collapse">
-                                        <th scope="row">1</th>
-                                        <td>Mark twatssdf</td>
-                                        <td>Otto dsfkjdslkgjks jglskjdlgkj slkdjg l sdfsdlgslkjdglksjdglk</td>
-                                        <td>@mdo</td>
-                                    </tr>
+                                    @foreach( $Articles as $article)
+                                        <tr data-toggle="collapse" href="#collapse">
+                                            <th scope="row">{{$loop->iteration}}</th>
+                                            <td>{{$article->title}}</td>
+                                            <td>{{$article->description}}</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                    @endforeach
                                     <tr class="hide-table-padding">
                                         <td colspan="5">
                                             <div id="collapse" class="collapse in p-3 text-center">

@@ -12,7 +12,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
+    <script src="{{ asset('js/tinymce.min.js') }}"></script>
     <script>
         var editor_config = {
             path_absolute : "/",

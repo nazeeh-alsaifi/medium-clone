@@ -43,7 +43,7 @@
                                             <td colspan="4">
                                                 <div id="article{{$loop->iteration}}"
                                                      class="collapse in p-3 text-center">
-                                                    <button class="btn btn-success">Update</button>
+                                                    <a class="btn btn-success" href="{{route('article.edit',$article->id)}}">Edit</a>
                                                     <a class="btn btn-danger" href="{{route('article.delete',$article->id)}}">Delete</a>
                                                 </div>
                                             </td>

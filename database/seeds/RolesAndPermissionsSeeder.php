@@ -17,14 +17,17 @@ class RolesAndPermissionsSeeder extends Seeder
 
 
         Role::create(['name' => 'user']);
-        $user = factory(\App\User::class)->create();
+        $user =  factory(\App\User::class)->create([
+            'name' => 'John Doe',
+            'email' => 'john@example.com',
+        ]);
 
         $user->assignRole('user');
         Role::create(['name' => 'admin']);
 
         $admin = factory(\App\User::class)->create([
-            'name' => 'John Doe',
-            'email' => 'john@example.com',
+            'name' => 'Nazeeh Saifi',
+            'email' => 'Nazeeh@example.com',
         ]);
 
         $admin->assignRole('admin');

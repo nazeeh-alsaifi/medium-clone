@@ -21,7 +21,8 @@ class ArticleController extends Controller
             'description' => 'required',
             'content' => 'required']);
 
-        if (array_key_exists('iamge',$data)) {
+        if (array_key_exists('image',$data)) {
+            $image=$data['image'];
             $imageName=date('YmdHis') . "." . $image->getClientOriginalExtension();
 //            $fullpath = 'images/'. $imageName;
             $file=$request->file('image');
@@ -52,6 +53,17 @@ class ArticleController extends Controller
 
     }
 
+    public function edit($article_id)
+    {
+        $articleInfo=Article::find($article_id);
+        return view('article.edit', compact('articleInfo'));
+
+    }
+    public function update(Request $request, Article $a)
+    {
+        //
+    }
+
     public function delete($article_id)
     {
 
@@ -61,6 +73,8 @@ class ArticleController extends Controller
         return redirect()->route('admin');
 
     }
+
+
 
 
 }

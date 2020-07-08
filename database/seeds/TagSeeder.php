@@ -31,7 +31,7 @@ class TagSeeder extends Seeder
             'updated_at' => now()
         ]);
         DB::table('tags')->insert([
-            "id"=>2,
+            "id"=>4,
             "name"=>"health",
             'created_at' => now(),
             'updated_at' => now()

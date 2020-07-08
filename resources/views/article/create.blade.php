@@ -1,5 +1,8 @@
 @extends('layouts.app')
-
+@push('script_link')
+    <script src="{{ asset('js/select2.min.js') }}"></script>
+    <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
+@endpush
 @section('content')
     <div id="articles-create" class="container">
         <div class="row justify-content-center">
@@ -122,3 +125,11 @@
         </div>
     </div>
 @endsection
+
+@push('script')
+    <script>
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2();
+        });
+    </script>
+@endpush

@@ -233,5 +233,28 @@
 @endsection
 
 @push('script')
+<script>
 
+    $('#recipeCarousel').carousel({
+        interval: 10000
+    });
+
+    $('.carousel .carousel-item').each(function(){
+        var minPerSlide = 20;
+        var next = $(this).next();
+        if (!next.length) {
+            next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+
+        for (var i=0;i<minPerSlide;i++) {
+            next=next.next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+
+            next.children(':first-child').clone().appendTo($(this));
+        }
+    });
+</script>
 @endpush

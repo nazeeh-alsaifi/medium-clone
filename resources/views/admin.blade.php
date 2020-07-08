@@ -37,7 +37,6 @@
                                             <td>{{$article->created_at}}</td>
                                             <td class="text-center" data-toggle="collapse" href="#article{{$loop->iteration}}">
                                                 <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
-
                                             </td>
                                         </tr>
                                         <tr class="hide-table-padding">
@@ -45,12 +44,11 @@
                                                 <div id="article{{$loop->iteration}}"
                                                      class="collapse in p-3 text-center">
                                                     <button class="btn btn-success">Update</button>
-                                                    <button class="btn btn-danger">Delete</button>
+                                                    <a class="btn btn-danger" href="{{route('article.delete',$article->id)}}">Delete</a>
                                                 </div>
                                             </td>
                                         </tr>
                                     @endforeach
-
                                     </tbody>
                                 </table>
                             </div>

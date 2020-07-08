@@ -125,7 +125,7 @@
                                 @if(auth()->user()->hasRole('admin'))
                                 <a class="dropdown-item" href="{{route('admin')}}">admin dashboard</a>
                                 @endif
-                                <a class="dropdown-item" href="#">Stories</a>
+                                <a class="dropdown-item" href="{{route('home')}}">Stories</a>
 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();

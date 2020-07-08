@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use Illuminate\Http\Request;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class ArticleController extends Controller
 {
@@ -12,17 +13,35 @@ class ArticleController extends Controller
         return view('article.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-       // dd(request()->all());
-
         $data = request()->validate([
+            'image' => 'image',
             'title' => 'required',
             'description' => 'required',
             'content' => 'required']);
 
-        Article::create($data);
-        return view("admin");
+        if (array_key_exists('iamge',$data)) {
+            $imageName=date('YmdHis') . "." . $image->getClientOriginalExtension();
+//            $fullpath = 'images/'. $imageName;
+            $file=$request->file('image');
+            $file2=$file->move(public_path('images'),$imageName);
+            Image::make($file2)->resize(1200,1200)->save();
+
+            Article::create([
+                'image' => $imageName,
+                'title' => $data['title'],
+                'description' => $data['description'],
+                'content' => $data['content']
+            ]);
+        }
+        Article::create([
+            'title' => $data['title'],
+            'description' => $data['description'],
+            'content' => $data['content']
+        ]);
+
+        return redirect()->route('admin');
     }
 
     public function show($article_id){

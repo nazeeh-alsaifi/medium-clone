@@ -10,6 +10,21 @@
                     <div class="card-body">
                         <form method="post" action="{{route('article.store')}}" enctype="multipart/form-data">
                             @csrf
+
+                            <div class="form-group row" style="">
+                                <label for="title"
+                                       class="col-md-2 col-form-label text-md-right">{{ __('Image') }}</label>
+
+                                <div class="col-md-9">
+                                    <input id="image" type="file" class="form-control-file @error('image') is-invalid @enderror" name="image"  value="{{old('image')}}">
+                                    @error('image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
                             <div class="form-group row">
                                 <label for="title"
                                        class="col-md-2 col-form-label text-md-right">{{ __('Title') }}</label>

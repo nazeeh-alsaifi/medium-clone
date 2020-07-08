@@ -19,6 +19,7 @@ class CreateArticlesTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->longText('content');
+            $table->string('image')->default('noimage');
             $table->bigInteger('views')->default(0);
         });
     }

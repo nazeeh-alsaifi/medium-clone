@@ -8,6 +8,9 @@
                         <div class="card-header col-lg-12 p-3"
                              style="font-family: 'Merriweather', serif;text-align: center"><h2>
                                 <b>{{$articleInfo->title}}</b></h2></div>
+                        @if(!($articleInfo->image == "noimage"))
+                        <div><img src="/images/{{$articleInfo->image}}" style="width: 100%; height:80vh;" /></div>
+                        @endif
                         <div class="row ml-sm-0 mr-sm-0">
                             <div class="col-lg-12 col-sm-6 mb-2 mt-2"
                                  style="font-family: 'Merriweather', serif;text-align: left">

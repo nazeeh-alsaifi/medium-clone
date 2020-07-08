@@ -22007,6 +22007,22 @@ hr.solid {
   text-decoration: none;
 }
 
+.heading-small {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2 !important;
+  max-height: 2.4em !important;
+  min-height: 70px;
+}
+
+.heading-small > a {
+  color: black;
+}
+
+.heading-small > a:hover {
+  text-decoration: none;
+}
+
 .card-subheading {
   color: rgba(0, 0, 0, 0.44);
   font-size: 18px !important;

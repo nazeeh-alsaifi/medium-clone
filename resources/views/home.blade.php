@@ -73,78 +73,52 @@
             </div>
         </div>
     </div>
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="card-group py-4">
-                <div class="col-sm-12 col-md-4 col-lg-5">
+                <div class="col-sm-12 col-md-4 col-lg-4 p-0">
                     <div class="card border-0">
-                        <img  src="/images/{{$First->find(1)->image}}" class="card-img-top">
+                        <img src="/images/{{$First[0]->image}}" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title heading">
-                                <a  href="{{route('article.show',$First->find(1)->id)}}">{{$First->find(1)->title}}</a>
+                                <a href="{{route('article.show',$First[0]->id)}}">{{$First[0]->title}}</a>
                             </h5>
-                            <p class="card-text">{{$First->find(1)->description}}</p>
+                            <p class="card-text">{{$First[0]->description}}</p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
+
+                <div class="col-sm-12 col-md-4 col-lg-5 p-0">
                     <div class="card border-0">
-                        <div class="col-sm-12 col-md-12 col-lg-12 mt-2">
-                            <div class="card">
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <div class="card-block px-2">
-                                            <h4 class="card-title">Title </h4>
-                                            <p class="card-text">Description</p>
+                        @for($i=1;$i<4;$i++)
+                            <div class="col-sm-12 col-md-12 col-lg-12 mb-4">
+                                <div class="card border-0">
+                                    <div class="row no-gutters">
+                                        <div class="col-4">
+                                            <img src="/images/{{$First[$i]->image}}" class="img-fluid" alt="">
                                         </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <img src="//placehold.it/100" class="img-fluid" alt="">
+                                        <div class="col-8">
+                                            <div class="card-block px-2 heading-small">
+                                                <a href="{{route('article.show',$First[$i]->id)}}">{{$First[$i]->title}}</a>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-12">
-                            <div class="card">
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <div class="card-block px-2">
-                                            <h4 class="card-title">Title </h4>
-                                            <p class="card-text">Description</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <img src="//placehold.it/100" class="img-fluid" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-12">
-                            <div class="card">
-                                <div class="row no-gutters">
-                                    <div class="col">
-                                        <div class="card-block px-2">
-                                            <h4 class="card-title">Title </h4>
-                                            <p class="card-text">Description</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <img src="//placehold.it/100" class="img-fluid" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endfor
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-3">
+                <div class="col-sm-12 col-md-4 col-lg-3 p-0">
                     <div class="card border-0">
-                        <img  src="/images/{{$First->find(5)->image}}" class="card-img-top">
+                        <img src="/images/{{$First[4]->image}}" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title heading">
-                                <a  href="{{route('article.show',$First->find(5)->id)}}">{{$First->find(5)->title}}</a>
+                                <a href="{{route('article.show',$First[4]->id)}}">{{$First[4]->title}}</a>
                             </h5>
-                            <p class="card-text">{{$First->find(5)->description}}</p>
+                            <p class="card-text">{{$First[4]->description}}</p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
@@ -152,19 +126,19 @@
             </div>
         </div>
     </div>
-    <div class="container text-center">
-        <div class="row mx-auto my-auto">
-            <div class="col-lg-10 mx-auto">
-                <div class="mb-4">
-                    <hr class="solid">
-                </div>
+
+
+    <div class="container text-center ">
+        <div class="row ">
+            <div class="col-lg-10">
+                <hr class="solid">
             </div>
         </div>
     </div>
     <div class="container  d-flex">
-    <div class="col-lg-8">
+        <div class="col-lg-8">
             @foreach( $Articles as $article)
-                <div class="card mt-lg-5">
+                <div class="card my-lg-5 border-0">
                     <div class="row no-gutters">
                         <div class="col">
                             <div class="px-2">
@@ -172,7 +146,7 @@
                                     Based on your interests
                                 </div>
                                 <div class="heading">
-                                    <a  href="{{route('article.show',$article->id)}}">{{$article->title}}</a>
+                                    <a href="{{route('article.show',$article->id)}}">{{$article->title}}</a>
                                 </div>
                                 <div class="article-info">
                                     <div class="article-info-left">
@@ -185,8 +159,9 @@
                                         </div>
                                         <div class="article-info-center">
                                             <div class="username">Nazeeh Saifi</div>
-                                            <div><span class="date">{{$article->created_at->shortEnglishMonth }} {{$article->created_at->day }}  </span>
-                                                 <span>.</span>
+                                            <div><span
+                                                    class="date">{{$article->created_at->shortEnglishMonth }} {{$article->created_at->day }}  </span>
+                                                <span>.</span>
                                                 <span class="read-time"> {{$loop->iteration}} min read</span>
                                             </div>
                                         </div>
@@ -211,16 +186,16 @@
 
         <div class="col-lg-4">
             @foreach( $Articles as $article)
-                <div class="card mt-lg-2">
+                <div class="card my-lg-4 border-0">
                     <div class="row no-gutters">
                         <div class="col">
-                            <div class="px-2">
+                            <div class="px-4">
                                 <div class="heading">
                                     {{$article->title}}
                                 </div>
                                 <div class="article-info">
                                     <div class="article-info-left">
-                                        <div class="">
+                                        <div>
                                             <a class="profile-avatar">
                                                 <img
                                                     src="https://cdn-images-1.medium.com/fit/c/40/40/1*tl0Vk1GWLRkaRwsBXKTnFg.jpeg"

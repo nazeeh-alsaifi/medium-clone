@@ -28,7 +28,6 @@ class HomeController extends Controller
         $articles= Article::all();
 
         $first=$articles->take(5);
-
 //        dd($articles->first()->created_at->shortEnglishMonth);
         return view("home", ['Articles' => $articles,'First' => $first]);
     }

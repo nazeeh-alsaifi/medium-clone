@@ -26,7 +26,10 @@ class HomeController extends Controller
     public function index()
     {
         $articles= Article::all();
+
+        $first=$articles->take(5);
+
 //        dd($articles->first()->created_at->shortEnglishMonth);
-        return view("home", ['Articles' => $articles]);
+        return view("home", ['Articles' => $articles,'First' => $first]);
     }
 }

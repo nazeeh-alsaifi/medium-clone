@@ -76,21 +76,21 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="card-group py-4">
-                <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="col-sm-12 col-md-4 col-lg-5">
                     <div class="card border-0">
-                        <img src="{{asset("svg/medium-vector-logo.svg")}}" class="card-img-top" alt="...">
+                        <img  src="/images/{{$First->find(1)->image}}" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural
-                                lead-in to
-                                additional content. This content is a little bit longer.</p>
+                            <h5 class="card-title heading">
+                                <a  href="{{route('article.show',$First->find(1)->id)}}">{{$First->find(1)->title}}</a>
+                            </h5>
+                            <p class="card-text">{{$First->find(1)->description}}</p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4 col-lg-4">
                     <div class="card border-0">
-                        <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-sm-12 col-md-12 col-lg-12 mt-2">
                             <div class="card">
                                 <div class="row no-gutters">
                                     <div class="col">
@@ -137,14 +137,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="col-sm-12 col-md-4 col-lg-3">
                     <div class="card border-0">
-                        <img src="{{asset("svg/medium-vector-logo.svg")}}" class="card-img-top" alt="...">
+                        <img  src="/images/{{$First->find(5)->image}}" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural
-                                lead-in to
-                                additional content. This content is a little bit longer.</p>
+                            <h5 class="card-title heading">
+                                <a  href="{{route('article.show',$First->find(5)->id)}}">{{$First->find(5)->title}}</a>
+                            </h5>
+                            <p class="card-text">{{$First->find(5)->description}}</p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                                     Based on your interests
                                 </div>
                                 <div class="heading">
-                                    {{$article->title}}
+                                    <a  href="{{route('article.show',$article->id)}}">{{$article->title}}</a>
                                 </div>
                                 <div class="article-info">
                                     <div class="article-info-left">
@@ -180,11 +180,11 @@
                                             <a class="profile-avatar">
                                                 <img
                                                     src="https://cdn-images-1.medium.com/fit/c/40/40/1*tl0Vk1GWLRkaRwsBXKTnFg.jpeg"
-                                                    class="avatar-image" alt="Go to the profile of Jeff Goins">
+                                                    class="avatar-image" alt="">
                                             </a>
                                         </div>
                                         <div class="article-info-center">
-                                            <div class="username">Eric Simons</div>
+                                            <div class="username">Nazeeh Saifi</div>
                                             <div><span class="date">{{$article->created_at->shortEnglishMonth }} {{$article->created_at->day }}  </span>
                                                  <span>.</span>
                                                 <span class="read-time"> {{$loop->iteration}} min read</span>
@@ -224,11 +224,11 @@
                                             <a class="profile-avatar">
                                                 <img
                                                     src="https://cdn-images-1.medium.com/fit/c/40/40/1*tl0Vk1GWLRkaRwsBXKTnFg.jpeg"
-                                                    class="avatar-image" alt="Go to the profile of Jeff Goins">
+                                                    class="avatar-image" alt="">
                                             </a>
                                         </div>
                                         <div class="article-info-center">
-                                            <div class="username">Eric Simons</div>
+                                            <div class="username">Nazeeh Saifi</div>
                                             <div><span class="date">{{$article->created_at}}</span><span
                                                     class="read-time"> 4 min read</span>
                                             </div>

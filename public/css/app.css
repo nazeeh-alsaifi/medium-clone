@@ -21991,20 +21991,20 @@ hr.solid {
   border-top: 1px solid #adadad;
 }
 
-.heading_small {
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1.2 !important;
-  max-height: 2.4em !important;
-  min-height: 70px;
-}
-
 .heading {
   font-size: 20px;
   font-weight: 700;
   line-height: 1.2 !important;
   max-height: 2.4em !important;
   min-height: 70px;
+}
+
+.heading > a {
+  color: black;
+}
+
+.heading > a:hover {
+  text-decoration: none;
 }
 
 .card-subheading {

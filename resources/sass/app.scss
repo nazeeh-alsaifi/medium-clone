@@ -1,19 +1,14 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import "layout";
-
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import "layout";
@@ -24,6 +19,7 @@
     margin: 0;
     padding: 0;
 }
+
 a.btn {
     color: white;
 }
@@ -43,10 +39,11 @@ a:hover.btn {
     text-transform: uppercase;
 }
 
-#content{
+#content {
     width: 800px;
     height: 500px;
 }
+
 hr.solid {
     border-top: 1px solid #adadad;
 }
@@ -57,13 +54,23 @@ hr.solid {
     line-height: 1.2 !important;
     max-height: 2.4em !important;
     min-height: 70px;
+
+    & > a {
+        color: black;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
+
 .card-subheading {
-    color: rgba(0,0,0,.44);
-    font-size: 18px!important;
+    color: rgba(0, 0, 0, .44);
+    font-size: 18px !important;
     padding-top: 15px;
     padding-bottom: 5px;
 }
+
 .article-info {
     display: flex;
     flex-direction: row;
@@ -89,12 +96,12 @@ hr.solid {
 }
 
 .username {
-    color: rgba(0,0,0,.8);
+    color: rgba(0, 0, 0, .8);
     font-size: 12px;
 }
 
 .date, .read-time {
-    color: rgba(0,0,0,.44)!important;
+    color: rgba(0, 0, 0, .44) !important;
     font-size: 12px;
 }
 
@@ -106,13 +113,14 @@ hr.solid {
 }
 
 .more-options-link {
-    color: rgba(0,0,0,.44);
+    color: rgba(0, 0, 0, .44);
     display: inline-block;
     font-size: 19px;
     height: 24px;
     margin-left: 6px;
     vertical-align: middle;
-    &:hover{
+
+    &:hover {
         color: black;
 
     }

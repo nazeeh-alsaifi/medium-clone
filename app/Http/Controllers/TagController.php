@@ -33,10 +33,10 @@ class TagController extends Controller
         $data = request()->validate([
             'name' => 'required|max:255']);
         $tag = new Tag;
-        $tag->name = $request->name;
+        $tag->name = $data['name'];
         $tag->save();
 
-        return redirect()->route('admin.dashboard');
+        return redirect()->route('admin');
     }
     /**
      * Display the specified resource.

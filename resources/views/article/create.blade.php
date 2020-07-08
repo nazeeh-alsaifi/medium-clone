@@ -16,7 +16,9 @@
                                        class="col-md-2 col-form-label text-md-right">{{ __('Image') }}</label>
 
                                 <div class="col-md-9">
-                                    <input id="image" type="file" class="form-control-file @error('image') is-invalid @enderror" name="image"  value="{{old('image')}}">
+                                    <input id="image" type="file"
+                                           class="form-control-file @error('image') is-invalid @enderror" name="image"
+                                           value="{{old('image')}}">
                                     @error('image')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -32,7 +34,7 @@
                                 <div class="col-md-9">
                                     <input id="title" type="text"
                                            class="form-control @error('title') is-invalid @enderror" name="title"
-                                           value="{{old('title')}}"  autocomplete="title">
+                                           value="{{old('title')}}" autocomplete="title">
 
                                     @error('title')
                                     <span class="invalid-feedback" role="alert">
@@ -65,7 +67,9 @@
                                        class="col-md-2 col-form-label text-md-right">{{ __('Content') }}</label>
 
                                 <div class="pl-3">
-                                    <textarea id="content"  class="form-control my-editor @error('content') is-invalid @enderror" name="content" >{{old('content')}}</textarea>
+                                    <textarea id="content"
+                                              class="form-control my-editor @error('content') is-invalid @enderror"
+                                              name="content">{{old('content')}}</textarea>
 
                                     @error('content')
                                     <span class="invalid-feedback" role="alert">

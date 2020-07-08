@@ -13,6 +13,6 @@ Route::patch('admin/article/article_num={article_id}', 'ArticleController@update
 
 
 
-Route::resource('tag','TagController');
+Route::resource('tag','TagController',['except' => ['create']]);
 
 

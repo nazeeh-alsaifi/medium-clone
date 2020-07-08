@@ -22,7 +22,15 @@ class ArticleController extends Controller
             'content' => 'required']);
 
         Article::create($data);
-        return view("home");
+        return view("admin");
+    }
+
+    public function show($article_id){
+
+        $articleInfo = Article::find($article_id);
+
+        return view('article.show', compact('articleInfo'));
+
     }
 
 }

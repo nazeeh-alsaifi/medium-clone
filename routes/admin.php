@@ -11,3 +11,5 @@ Route::get('/admin/article/create', 'ArticleController@create')->name('article.c
 
 
 Route::resource('tag','TagController');
+
+

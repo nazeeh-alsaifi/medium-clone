@@ -122,6 +122,9 @@
                                     aria-expanded="false"></button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="#">Become a member</a>
+                                @if(auth()->user()->hasRole('admin'))
+                                <a class="dropdown-item" href="{{route('admin')}}">admin dashboard</a>
+                                @endif
                                 <a class="dropdown-item" href="#">Stories</a>
 
                                 <a class="dropdown-item" href="{{ route('logout') }}"

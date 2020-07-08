@@ -18,43 +18,39 @@
                                     <thead class="thead-light ">
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">User</th>
                                         <th scope="col">Title</th>
+                                        <th scope="col">Description</th>
                                         <th scope="col">Created At</th>
+                                        <th scope="col"></th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach( $Articles as $article)
-                                        <tr data-toggle="collapse" href="#collapse">
-                                            <th scope="row">{{$loop->iteration}}</th>
-                                            <td>{{$article->title}}</td>
+                                        <tr >
+                                            <th scope="row" >
+                                                {{$loop->iteration}}
+                                            </th>
+                                            <td>
+                                                <a href="{{route('article.show',$article->id)}}">{{$article->title}}</a>
+                                            </td>
                                             <td>{{$article->description}}</td>
-                                            <td>@mdo</td>
+                                            <td>{{$article->created_at}}</td>
+                                            <td class="text-center" data-toggle="collapse" href="#article{{$loop->iteration}}">
+                                                <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+
+                                            </td>
+                                        </tr>
+                                        <tr class="hide-table-padding">
+                                            <td colspan="4">
+                                                <div id="article{{$loop->iteration}}"
+                                                     class="collapse in p-3 text-center">
+                                                    <button class="btn btn-success">Update</button>
+                                                    <button class="btn btn-danger">Delete</button>
+                                                </div>
+                                            </td>
                                         </tr>
                                     @endforeach
-                                    <tr class="hide-table-padding">
-                                        <td colspan="5">
-                                            <div id="collapse" class="collapse in p-3 text-center">
-                                                <button class="btn btn-success">Update</button>
-                                                <button class="btn btn-danger">Delete</button>
-                                            </div>
-                                        </td>
-                                    </tr>
 
-                                    <tr data-toggle="collapse" href="#collapse2">
-                                        <th scope="row">1</th>
-                                        <td>Mark twatssdf</td>
-                                        <td>Otto dsfkjdslkgjks jglskjdlgkj slkdjg l sdfsdlgslkjdglksjdglk</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr class="hide-table-padding">
-                                        <td colspan="5">
-                                            <div id="collapse2" class="collapse in p-3 text-center">
-                                                <button class="btn btn-success">Update</button>
-                                                <button class="btn btn-danger">Delete</button>
-                                            </div>
-                                        </td>
-                                    </tr>
                                     </tbody>
                                 </table>
                             </div>

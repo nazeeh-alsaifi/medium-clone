@@ -26,3 +26,4 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+Route::get('article={article_id}', 'ArticleController@show')->name('article.show');

@@ -21,6 +21,8 @@
                                         <th scope="col">Title</th>
                                         <th scope="col">Description</th>
                                         <th scope="col">Created At</th>
+                                        <th scope="col">Updated At</th>
+
                                         <th scope="col"></th>
                                     </tr>
                                     </thead>
@@ -35,6 +37,8 @@
                                             </td>
                                             <td>{{$article->description}}</td>
                                             <td>{{$article->created_at}}</td>
+                                            <td>{{$article->updated_at}}</td>
+
                                             <td class="text-center" data-toggle="collapse" href="#article{{$loop->iteration}}">
                                                 <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
                                             </td>

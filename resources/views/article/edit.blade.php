@@ -8,16 +8,18 @@
                     <div class="card-header">Edit Article</div>
 
                     <div class="card-body">
-                        <form method="post" action="" enctype="multipart/form-data">
+                        <form method="post" action="{{route('article.update',$articleInfo->id)}}" enctype="multipart/form-data">
+                            @method('PATCH')
+
                             @csrf
 
                             <div class="form-group row" style="">
                                 <label for="title"
                                        class="col-md-2 col-form-label text-md-right">{{ __('Image') }}</label>
                                 <div class="col-md-9">
-                                    <input id="image" type="file" class="form-control-file @error('image') is-invalid @enderror" name="image" style="display: none"  >
-                                    <button class="btn btn-dark mr-2" for="image">New Image</button>
                                     <label>Previous Image: {{$articleInfo->image}}</label>
+                                    <input id="image" type="file" class="form-control-file @error('image') is-invalid @enderror" name="image"   >
+{{--                                    <span class="btn btn-dark mr-2" for="image">New Image</span>--}}
 
                                     @error('image')
                                     <span class="invalid-feedback" role="alert">

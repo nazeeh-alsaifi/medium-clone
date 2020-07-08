@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Tag;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -10,7 +11,9 @@ class ArticleController extends Controller
 {
     public function create()
     {
-        return view('article.create');
+        $tags = Tag::all();
+
+        return view('article.create',['Tags' => $tags]);
     }
 
     public function store(Request $request)

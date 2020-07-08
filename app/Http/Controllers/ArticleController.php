@@ -46,7 +46,9 @@ class ArticleController extends Controller
                 'content' => $data['content']
             ]);
         }
-        dd($article->tags()->sync($request->tags,false));
+//        /dd($request->tag);
+
+        $article->tags()->sync($request->tag,false);
 
 
         return redirect()->route('admin');

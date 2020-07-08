@@ -63,6 +63,34 @@
                             </div>
 
                             <div class="form-group row">
+                                <label for="tag"
+                                       class="col-md-2 col-form-label text-md-right">{{ __('Tag') }}</label>
+
+                                <div class="col-md-9">
+                                    <select id="tag"
+                                            class="js-example-basic-multiple form-control @error('tag') is-invalid @enderror"
+                                            name="tag" multiple="multiple">
+                                        @foreach($Tags as $tag)
+                                            <option>$tag->name</option>
+                                        @endforeach
+                                    </select>
+
+                                    {{--
+                                    <input id="tag" type="text"
+                                           class="form-control @error('tag') is-invalid @enderror"
+                                           name="tag"
+                                           autocomplete="tag" value="{{old('tag')}}">
+                                    --}}
+                                    @error('tag')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
                                 <label for="article-content"
                                        class="col-md-2 col-form-label text-md-right">{{ __('Content') }}</label>
 

@@ -11,8 +11,10 @@
     <title>{{ config('app.name', 'medium_clone') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/tinymce.min.js') }}"></script>
+    @stack('script_link')
+
     <script>
         var editor_config = {
             path_absolute : "/",

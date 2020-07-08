@@ -185,8 +185,9 @@
                                         </div>
                                         <div class="article-info-center">
                                             <div class="username">Eric Simons</div>
-                                            <div><span class="date">Aug 3 ·  </span><span
-                                                    class="read-time"> 4 min read</span>
+                                            <div><span class="date">{{$article->created_at->shortEnglishMonth }} {{$article->created_at->day }}  </span>
+                                                 <span>.</span>
+                                                <span class="read-time"> {{$loop->iteration}} min read</span>
                                             </div>
                                         </div>
                                     </div>
@@ -228,13 +229,11 @@
                                         </div>
                                         <div class="article-info-center">
                                             <div class="username">Eric Simons</div>
-                                            <div><span class="date">Aug 3 ·  </span><span
+                                            <div><span class="date">{{$article->created_at}}</span><span
                                                     class="read-time"> 4 min read</span>
                                             </div>
                                         </div>
                                     </div>
-
-
                                 </div>
 
                             </div>

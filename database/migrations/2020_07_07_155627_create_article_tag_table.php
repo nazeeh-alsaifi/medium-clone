@@ -13,7 +13,7 @@ class CreateArticleTagTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_tag', function (Blueprint $table) {
+        Schema::create('article_tag', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('article_id')->unsigned();
             $table->bigInteger('tag_id')->unsigned();

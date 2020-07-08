@@ -72,7 +72,7 @@
                                 <div class="col-md-9">
                                     <select id="tag"
                                             class="js-example-basic-multiple form-control @error('tag') is-invalid @enderror"
-                                            name="tag" multiple="multiple">
+                                            name="tag[]" multiple="multiple">
                                         @foreach($Tags as $tag)
                                             <option>{{$tag->name}}</option>
                                         @endforeach

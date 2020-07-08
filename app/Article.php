@@ -9,6 +9,6 @@ class Article extends Model
     protected $fillable = ['title', 'description', 'content','image'];
 
     public function tags(){
-        $this->hasMany('App\Tag');
+        return $this->belongsToMany('App\Tag','article_tag');
     }
 }

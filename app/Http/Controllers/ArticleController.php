@@ -32,18 +32,22 @@ class ArticleController extends Controller
             $file2=$file->move(public_path('images'),$imageName);
             Image::make($file2)->resize(1200,1200)->save();
 
-            Article::create([
+          $article = Article::create([
                 'image' => $imageName,
                 'title' => $data['title'],
                 'description' => $data['description'],
                 'content' => $data['content']
             ]);
         }
-        Article::create([
-            'title' => $data['title'],
-            'description' => $data['description'],
-            'content' => $data['content']
-        ]);
+        else{
+            $article=Article::create([
+                'title' => $data['title'],
+                'description' => $data['description'],
+                'content' => $data['content']
+            ]);
+        }
+        dd($article->tags()->sync($request->tags,false));
+
 
         return redirect()->route('admin');
     }

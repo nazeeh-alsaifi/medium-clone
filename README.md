@@ -25,6 +25,14 @@ After downloading the zip file and extracting it open cmd and navigate to projec
   6. php artisan serve [this command will run a local server please run on the link] usually (https://127.0.0.1:8000/)                                        
     
     
+there are two types of users:
+1. Admin: 
+    * Email: nazeeh@example.com
+    * Password: password
+    
+2. User:  
+    * Email: john@example.com
+    * passord: password
         
 ##Enjoy..........
     

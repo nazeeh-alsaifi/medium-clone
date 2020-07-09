@@ -84,7 +84,7 @@
                             <h5 class="card-title heading">
                                 <a href="{{route('article.show',$First[0]->id)}}">{{$First[0]->title}}</a>
                             </h5>
-                            <p class="card-text">{{$First[0]->description}}</p>
+                            <p class="card-text">{{substr($First[0]->description,0,100) . '...'}}</p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
@@ -115,10 +115,10 @@
                     <div class="card border-0">
                         <img src="/images/{{$First[4]->image}}" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title heading">
+                            <h5 class="card-title heading-medium">
                                 <a href="{{route('article.show',$First[4]->id)}}">{{$First[4]->title}}</a>
                             </h5>
-                            <p class="card-text">{{$First[4]->description}}</p>
+                            <p class="card-text ">{{substr($First[4]->description,0,100) . '...'}}</p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
@@ -140,7 +140,7 @@
             @foreach( $Articles as $article)
                 <div class="card my-lg-5 border-0">
                     <div class="row no-gutters">
-                        <div class="col">
+                        <div class="col-8">
                             <div class="px-2">
                                 <div class="card-subheading">
                                     Based on your interests
@@ -148,7 +148,10 @@
                                 <div class="heading">
                                     <a href="{{route('article.show',$article->id)}}">{{$article->title}}</a>
                                 </div>
-                                <div class="article-info">
+                                <div class="card-subheading-small">
+                                    {{substr($article->description,0,100) . '...'}}
+                                </div>
+                                <div class="article-info mt-4">
                                     <div class="article-info-left">
                                         <div class="">
                                             <a class="profile-avatar">
@@ -176,7 +179,7 @@
 
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-4">
                             <img src="/images/{{$article->image}}" width="100%" height="100%" alt="">
                         </div>
                     </div>
@@ -190,10 +193,10 @@
                     <div class="row no-gutters">
                         <div class="col">
                             <div class="px-4">
-                                <div class="heading">
+                                <div class="heading-medium">
                                     {{$article->title}}
                                 </div>
-                                <div class="article-info">
+                                <div class="article-info ">
                                     <div class="article-info-left">
                                         <div>
                                             <a class="profile-avatar">

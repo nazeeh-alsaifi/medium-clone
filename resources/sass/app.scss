@@ -53,7 +53,6 @@ hr.solid {
     font-weight: 700;
     line-height: 1.2 !important;
     max-height: 2.4em !important;
-    min-height: 70px;
 
     & > a {
         color: black;
@@ -62,13 +61,30 @@ hr.solid {
             text-decoration: none;
         }
     }
+    &-medium {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.2 !important;
+        max-height: 2.4em !important;
+        min-height: 70px;
 
-    &-small{
+        & > a {
+            color: black;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+    }
+
+    &-small {
         font-size: 16px;
         font-weight: 700;
         line-height: 1.2 !important;
         max-height: 2.4em !important;
         min-height: 70px;
+
         & > a {
             color: black;
 
@@ -85,6 +101,13 @@ hr.solid {
     font-size: 18px !important;
     padding-top: 15px;
     padding-bottom: 5px;
+
+    &-small {
+        color: rgba(0, 0, 0, .44);
+        font-size: 14px !important;
+
+
+    }
 }
 
 .article-info {

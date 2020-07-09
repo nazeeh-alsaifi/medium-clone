@@ -15,17 +15,6 @@
     @stack('script_link')
 
 
-{{--
-    <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
-    <script>
-        tinymce.init({
-            selector: 'textarea',
-            plugins : 'link image lists',
-            width:794
-        });
-      // toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | link image lists'
-    </script>
-    --}}
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -38,13 +27,15 @@
 </head>
 <body>
 <div id="app">
+
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="{{asset('/svg/medium-vector-logo.svg')}}"
-                     alt="HealthHub logo"
+                     alt="Medium logo"
                      class="pr-3">
             </a>
+            @auth
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
@@ -66,36 +57,27 @@
                 <a class="nav-link navbar-icon" href="#"><i class="fa fa-bookmark fa-lg" aria-hidden="true"></i></a>
                 <a class="nav-link navbar-icon" href="#"><i class="fa fa-bell-o fa-lg" aria-hidden="true"></i></a>
                 <button type="button" class="btn btn-outline-secondary font-weight-bold">Upgrade</button>
-
+        @endauth
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-3">
                     <!-- Authentication Links -->
-                    @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
-                    @else
+
+                    @auth
                         <div class="dropdown navbar-user-dropdown">
                             <button class="btn btn-secondary dropdown-toggle btn-circle" type="button"
                                     id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false"></button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Become a member</a>
                                 @if(auth()->user()->hasRole('admin'))
-                                <a class="dropdown-item" href="{{route('admin')}}">admin dashboard</a>
+                                <a class="dropdown-item" href="{{route('admin')}}">Admin Dashboard</a>
                                 @endif
                                 <a class="dropdown-item" href="{{route('home')}}">Stories</a>
 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    sign out
+                                    Sign out
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -104,7 +86,8 @@
                                 </form>
                             </div>
                         </div>
-                    @endguest
+                    @endauth
+
                 </ul>
             </div>
         </div>

@@ -46,9 +46,8 @@ class ArticleController extends Controller
             ]);
         }
 
-        if (isset($request->tag)) {
-            $article->tags()->sync($request->tag, false);
-        }
+        $article->tags()->sync($request->tag, false);
+
 
         return redirect()->route('admin');
     }
@@ -96,9 +95,8 @@ class ArticleController extends Controller
 
         $article->save();
 
-        if (isset($request->tag)) {
-            $article->tags()->sync($request->tag, true);
-        }
+        $article->tags()->sync($request->tag, true);
+
         return redirect()->route("admin");
 
     }

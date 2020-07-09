@@ -5,8 +5,13 @@
             <div class="row justify-content-center">
                 <div class="py-4 col-md-6">
                     <div class="card border-0">
+                        <div class="d-flex pl-md-3">
+                            @foreach($Tags as $tag)
+                                <h5 class="mr-2"><span class="badge badge-secondary">{{$tag->name}}</span></h5>
+                            @endforeach
 
-                        <div class="col-lg-12 p-3 justify-content-start"
+                        </div>
+                        <div class="col-lg-12  justify-content-start pt-0 px-3 pb-3"
                              style="font-family: 'Merriweather', serif;">
                             <h1>
                                 <b>{{$articleInfo->title}}</b>

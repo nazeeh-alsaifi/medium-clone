@@ -56,8 +56,8 @@ class ArticleController extends Controller
     {
 
         $articleInfo = Article::findOrFail($article_id);
-
-        return view('article.show', compact('articleInfo'));
+        $tags=$articleInfo->tags;
+        return view('article.show', ['articleInfo' => $articleInfo, 'Tags' => $tags]);
 
     }
 

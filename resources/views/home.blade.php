@@ -85,6 +85,11 @@
                                 <a href="{{route('article.show',$First[0]->id)}}">{{$First[0]->title}}</a>
                             </h5>
                             <p class="card-text">{{substr($First[0]->description,0,100) . '...'}}</p>
+                            <div class="d-flex ">
+                            @foreach($First[0]->tags as $tag)
+                                <h6 class="mr-2"><span class="badge badge-secondary">{{$tag->name}}</span></h6>
+                            @endforeach
+                            </div>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
@@ -103,6 +108,12 @@
                                             <div class="card-block px-2 heading-small">
                                                 <a href="{{route('article.show',$First[$i]->id)}}">{{$First[$i]->title}}</a>
                                             </div>
+                                            <p class="card-text px-2">{{substr($First[4]->description,0,40) . '...'}}</p>
+                                            <div class="d-flex ml-2 ">
+                                                @foreach($First[$i]->tags as $tag)
+                                                    <h6 class="mr-2"><span class="badge badge-secondary">{{$tag->name}}</span></h6>
+                                                @endforeach
+                                            </div>
                                         </div>
 
                                     </div>
@@ -119,6 +130,11 @@
                                 <a href="{{route('article.show',$First[4]->id)}}">{{$First[4]->title}}</a>
                             </h5>
                             <p class="card-text ">{{substr($First[4]->description,0,100) . '...'}}</p>
+                            <div class="d-flex ">
+                                @foreach($First[4]->tags as $tag)
+                                    <h6 class="mr-2"><span class="badge badge-secondary">{{$tag->name}}</span></h6>
+                                @endforeach
+                            </div>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
@@ -150,6 +166,11 @@
                                 </div>
                                 <div class="card-subheading-small">
                                     {{substr($article->description,0,100) . '...'}}
+                                </div>
+                                <div class="d-flex">
+                                @foreach($article->tags as $tag)
+                                    <h6 class="mr-2"><span class="badge badge-secondary">{{$tag->name}}</span></h6>
+                                @endforeach
                                 </div>
                                 <div class="article-info mt-4">
                                     <div class="article-info-left">

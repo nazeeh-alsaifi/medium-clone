@@ -177,7 +177,7 @@
                                         <div class="">
                                             <a class="profile-avatar">
                                                 <img
-                                                    src="https://cdn-images-1.medium.com/fit/c/40/40/1*tl0Vk1GWLRkaRwsBXKTnFg.jpeg"
+                                                    src="https://media-exp1.licdn.com/dms/image/C5603AQGaNl8fjmgRww/profile-displayphoto-shrink_400_400/0?e=1599696000&v=beta&t=wweDVpBWOHoKpBtoVSkmIPJWY8zoOvQNfNeWc4JeaRU"
                                                     class="avatar-image" alt="">
                                             </a>
                                         </div>
@@ -222,7 +222,7 @@
                                         <div>
                                             <a class="profile-avatar">
                                                 <img
-                                                    src="https://cdn-images-1.medium.com/fit/c/40/40/1*tl0Vk1GWLRkaRwsBXKTnFg.jpeg"
+                                                    src="https://media-exp1.licdn.com/dms/image/C5603AQGaNl8fjmgRww/profile-displayphoto-shrink_400_400/0?e=1599696000&v=beta&t=wweDVpBWOHoKpBtoVSkmIPJWY8zoOvQNfNeWc4JeaRU"
                                                     class="avatar-image" alt="">
                                             </a>
                                         </div>

@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @push('script_link')
     <script src="{{ asset('js/select2.min.js') }}"></script>
+    <script src="{{ asset('js/tinymce.min.js') }}"></script>
+
     <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
 @endpush
 @section('content')

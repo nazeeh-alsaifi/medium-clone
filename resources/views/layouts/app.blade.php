@@ -12,7 +12,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/tinymce.min.js') }}"></script>
     @stack('script_link')
 
     <script>

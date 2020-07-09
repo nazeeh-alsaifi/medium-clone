@@ -13,7 +13,7 @@ class ArticleController extends Controller
     {
         $tags = Tag::all();
 
-        return view('article.create',['Tags' => $tags]);
+        return view('article.create', ['Tags' => $tags]);
     }
 
     public function store(Request $request)
@@ -24,37 +24,37 @@ class ArticleController extends Controller
             'description' => 'required',
             'content' => 'required']);
 
-        if (array_key_exists('image',$data)) {
-            $image=$data['image'];
-            $imageName=date('YmdHis') . "." . $image->getClientOriginalExtension();
+        if (array_key_exists('image', $data)) {
+            $image = $data['image'];
+            $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
 //            $fullpath = 'images/'. $imageName;
-            $file=$request->file('image');
-            $file2=$file->move(public_path('images'),$imageName);
-            Image::make($file2)->resize(1200,1200)->save();
+            $file = $request->file('image');
+            $file2 = $file->move(public_path('images'), $imageName);
+            Image::make($file2)->resize(1200, 1200)->save();
 
-          $article = Article::create([
+            $article = Article::create([
                 'image' => $imageName,
                 'title' => $data['title'],
                 'description' => $data['description'],
                 'content' => $data['content']
             ]);
-        }
-        else{
-            $article=Article::create([
+        } else {
+            $article = Article::create([
                 'title' => $data['title'],
                 'description' => $data['description'],
                 'content' => $data['content']
             ]);
         }
-//        /dd($request->tag);
 
-        $article->tags()->sync($request->tag,false);
-
+        if (isset($request->tag)) {
+            $article->tags()->sync($request->tag, false);
+        }
 
         return redirect()->route('admin');
     }
 
-    public function show($article_id){
+    public function show($article_id)
+    {
 
         $articleInfo = Article::findOrFail($article_id);
 
@@ -64,10 +64,13 @@ class ArticleController extends Controller
 
     public function edit($article_id)
     {
-        $articleInfo=Article::find($article_id);
-        return view('article.edit', compact('articleInfo'));
+        $articleInfo = Article::find($article_id);
+        $tags = Tag::all();
+
+        return view('article.edit', ['articleInfo' => $articleInfo, 'Tags' => $tags])->with('leads', json_encode($articleInfo->tags()->allRelatedIds(), true));
 
     }
+
     public function update($article_id, Request $request)
     {
 
@@ -79,13 +82,13 @@ class ArticleController extends Controller
             'content' => 'required']);
 
         $article = Article::findOrFail($article_id);
-        if (array_key_exists('image',$data)) {
-            $image=$data['image'];
-            $imageName=date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $file=$request->file('image');
-            $file2=$file->move(public_path('images'),$imageName);
-            Image::make($file2)->resize(1200,1200)->save();
-            $article->image = $imageName ;
+        if (array_key_exists('image', $data)) {
+            $image = $data['image'];
+            $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $file = $request->file('image');
+            $file2 = $file->move(public_path('images'), $imageName);
+            Image::make($file2)->resize(1200, 1200)->save();
+            $article->image = $imageName;
         }
         $article->title = $data["title"];
         $article->description = $data["description"];
@@ -93,23 +96,9 @@ class ArticleController extends Controller
 
         $article->save();
 
-        /*
-                if (array_key_exists('image',$data)) {
-                    $image=$data['image'];
-                    $imageName=date('YmdHis') . "." . $image->getClientOriginalExtension();
-        //            $fullpath = 'images/'. $imageName;
-                    $file=$request->file('image');
-                    $file2=$file->move(public_path('images'),$imageName);
-                    Image::make($file2)->resize(1200,1200)->save();
-
-                    Article::create([
-                        'image' => $imageName,
-                        'title' => $data['title'],
-                        'description' => $data['description'],
-                        'content' => $data['content']
-                    ]);
-                }
-        */
+        if (isset($request->tag)) {
+            $article->tags()->sync($request->tag, true);
+        }
         return redirect()->route("admin");
 
     }
@@ -122,8 +111,6 @@ class ArticleController extends Controller
         return redirect()->route('admin');
 
     }
-
-
 
 
 }

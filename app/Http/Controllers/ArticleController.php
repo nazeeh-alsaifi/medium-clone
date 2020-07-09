@@ -20,7 +20,7 @@ class ArticleController extends Controller
     {
         $data = $request->validate([
             'image' => 'image',
-            'title' => 'required',
+            'title' => 'required|max:255',
             'description' => 'required',
             'content' => 'required']);
 
@@ -76,7 +76,7 @@ class ArticleController extends Controller
 //        dd($request->all());
         $data = $request->validate([
             'image' => 'image',
-            'title' => 'required',
+            'title' => 'required|max:255',
             'description' => 'required',
             'content' => 'required']);
 

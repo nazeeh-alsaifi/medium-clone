@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'medium_clone') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ secure_asset('js/app.js') }}"></script>
     @stack('script_link')
 
 
@@ -23,7 +23,7 @@
 
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
@@ -31,7 +31,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{asset('/svg/medium-vector-logo.svg')}}"
+                <img src="{{secure_asset('/svg/medium-vector-logo.svg')}}"
                      alt="Medium logo"
                      class="pr-3">
             </a>

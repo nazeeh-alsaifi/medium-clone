@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @push('script_link')
-    <script src="{{ asset('js/select2.min.js') }}"></script>
-    <script src="{{ asset('js/tinymce.min.js') }}"></script>
+    <script src="{{ secure_asset('js/select2.min.js') }}"></script>
+    <script src="{{ secure_asset('js/tinymce.min.js') }}"></script>
 
-    <link href="{{ asset('css/select2.min.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/select2.min.css') }}" rel="stylesheet">
 
     <script>
         var editor_config = {

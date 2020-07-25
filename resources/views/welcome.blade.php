@@ -7,7 +7,7 @@
     <title>Medium</title>
 
     <!-- Fonts -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Styles -->
     <style>
@@ -41,7 +41,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            <img src="{{asset('/svg/medium-vector-logo.svg')}}"
+            <img src="{{secure_asset('/svg/medium-vector-logo.svg')}}"
                  alt="Medium logo"
                  class="pr-3">
         </a>
